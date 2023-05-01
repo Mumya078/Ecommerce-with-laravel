@@ -95,13 +95,15 @@
                                     <div class="products-slick" data-nav="#slick-nav-1">
                                         <!-- product -->
                                         <div class="product">
-                                            <div class="product-img">
-                                                <img src="assets/img/product01.png" alt="">
-                                                <div class="product-label">
-                                                    <span class="sale">-30%</span>
-                                                    <span class="new">NEW</span>
+                                            <a href="/iteminfo">
+                                                <div class="product-img">
+                                                    <img src="assets/img/product01.png" alt="">
+                                                    <div class="product-label">
+                                                        <span class="sale">-30%</span>
+                                                        <span class="new">NEW</span>
+                                                    </div>
                                                 </div>
-                                            </div>
+                                            </a>
                                             <div class="product-body">
                                                 <p class="product-category">Category</p>
                                                 <h3 class="product-name"><a href="#">product name goes here</a></h3>

@@ -63,7 +63,7 @@
                 <!-- LOGO -->
                 <div class="col-md-3">
                     <div class="header-logo">
-                        <a href="#" class="logo">
+                        <a href="/index" class="logo">
                             <img src="assets/img/logo.png" alt="">
                         </a>
                     </div>
@@ -150,9 +150,11 @@
                             </a>
                         </div>
                         <!-- /Menu Toogle -->
+
                     </div>
                 </div>
                 <!-- /ACCOUNT -->
+
             </div>
             <!-- row -->
         </div>
