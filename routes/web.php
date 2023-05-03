@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminPanel\AdminHomeController;
+use App\Http\Controllers\AdminPanel\CategoryController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,6 +22,10 @@ Route::get('/', function () {
 
 //********************ADMİNPANEL ROUTES**********************
 Route::get('/admin',[AdminHomeController::class,'admin'])->name('admin');
+//*********************ADMİNCATEGORY ROUTES***********************
+Route::get('/admin/category',[CategoryController::class,'index'])->name('admin_category');
+Route::get('/admin/category/create',[CategoryController::class,'create'])->name('admin_category_create');
+Route::post('/admin/category/store',[CategoryController::class,'store'])->name('admin_category_store');
 
 
 //*********************HOME ROUTES*********************
