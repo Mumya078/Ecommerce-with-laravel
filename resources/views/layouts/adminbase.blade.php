@@ -197,28 +197,104 @@
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                     <!-- Add icons to the links using the .nav-icon class
                          with font-awesome or any other icon font library -->
+                    <li class="nav-header">INSELLING</li>
                     <li class="nav-item menu-open">
                         <a href="" class="nav-link active">
-                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <ion-icon  name="bar-chart-sharp" class="nav-icon fas fa-8x"></ion-icon>
                             <p>
                                 Dashboard
                             </p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="/categories" class="nav-link">
-                            <i class="nav-icon fas fa-th"></i>
+                        <a href="{{route('admin_category')}}" class="nav-link">
+                            <ion-icon  name="apps-sharp" class="nav-icon fas fa-8x"></ion-icon>
                             <p>
                                 Categories
                             </p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-th"></i>
+                        <a href="{{route('admin_category')}}" class="nav-link">
+                            <ion-icon  name="cube-sharp" class="nav-icon fas fa-8x"></ion-icon>
                             <p>
-                                Simple Link
-                                <span class="right badge badge-danger">New</span>
+                                Product
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <ion-icon  name="alarm-sharp" class="nav-icon fas fa-8x"></ion-icon>
+                            <p>
+                                Orders
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="pages/tables/simple.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon text-info"></i>
+                                    <p>New Orders</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="pages/tables/data.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon text-success"></i>
+                                    <p>Accepted Orders</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="pages/tables/jsgrid.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon text-warning"></i>
+                                    <p>Shipping Orders</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="pages/tables/jsgrid.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon text-danger"></i>
+                                    <p>Completed Orders</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('admin_category')}}" class="nav-link">
+                            <ion-icon  name="chatbox-ellipses-sharp" class="nav-icon fas fa-8x"></ion-icon>
+                            <p>
+                                Comments
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-header">OUTSELLING</li>
+                    <li class="nav-item">
+                        <a href="{{route('admin_category')}}" class="nav-link">
+                            <ion-icon  name="help-sharp" class="nav-icon fas fa-8x"></ion-icon>
+                            <p>
+                                Faq
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('admin_category')}}" class="nav-link">
+                            <ion-icon  name="chatbubbles-sharp" class="nav-icon fas fa-8x"></ion-icon>
+                            <p>
+                                Social
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('admin_category')}}" class="nav-link">
+                            <ion-icon  name="person-sharp" class="nav-icon fas fa-8x"></ion-icon>
+                            <p>
+                                Users
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('admin_category')}}" class="nav-link">
+                            <ion-icon  name="construct-sharp" class="nav-icon fas fa-8x"></ion-icon>
+                            <p>
+                                Settings
                             </p>
                         </a>
                     </li>
@@ -253,5 +329,8 @@
 <script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="/dist/js/adminlte.min.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
 </body>
 </html>

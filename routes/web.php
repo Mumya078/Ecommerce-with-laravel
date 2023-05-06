@@ -20,12 +20,25 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//********************ADMİNPANEL ROUTES**********************
-Route::get('/admin',[AdminHomeController::class,'admin'])->name('admin');
-//*********************ADMİNCATEGORY ROUTES***********************
-Route::get('/admin/category',[CategoryController::class,'index'])->name('admin_category');
-Route::get('/admin/category/create',[CategoryController::class,'create'])->name('admin_category_create');
-Route::post('/admin/category/store',[CategoryController::class,'store'])->name('admin_category_store');
+//******************** ADMİN PANEL ROUTES**********************
+Route::prefix('admin')->group(function (){
+    Route::get('/',[AdminHomeController::class,'admin'])->name('admin');
+
+//********************* ADMİN CATEGORY ROUTES***********************
+    Route::prefix('category')->controller(CategoryController::class)->group(function () {
+        Route::get('/','index')->name('admin_category');
+        Route::get('/create','create')->name('admin_category_create');
+        Route::post('/store','store')->name('admin_category_store');
+        Route::get('/edit/{id}','edit')->name('admin_category_edit');
+        Route::get('/delete/{id}','delete')->name('admin_category_delete');
+        Route::get('/show/{id}','show')->name('admin_category_show');
+        Route::post('/update/{id}', [CategoryController::class, 'update'])->name('admin_category_update');
+    });
+
+//*********************ADMİN PRODUCT ROUTES***********************
+//Route::get('/admin/product',[ProductController::class,'index'])->name('admin_category');
+
+});
 
 
 //*********************HOME ROUTES*********************

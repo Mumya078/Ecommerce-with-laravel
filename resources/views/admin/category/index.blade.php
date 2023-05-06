@@ -49,39 +49,30 @@
                                             <th>ID</th>
                                             <th>Categories</th>
                                             <th>Date</th>
-                                            <th>Status</th>
-                                            <th>Reason</th>
+                                            <th>Image</th>
+                                            <th>Description</th>
+                                            <th>Keywords</th>
+                                            <th style="text-align: center">Edit</th>
+                                            <th style="text-align: center">Delete</th>
+                                            <th style="text-align: center">Show</th>
+
                                         </tr>
                                         </thead>
                                         <tbody>
+                                        @foreach($data as $rs)
                                         <tr>
-                                            <td>183</td>
-                                            <td>John Doe</td>
-                                            <td>11-7-2014</td>
-                                            <td><span class="tag tag-success">Approved</span></td>
-                                            <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                                            <td>{{$rs->id}}</td>
+                                            <td>{{$rs->title}}</td>
+                                            <td>{{$rs->timestamps}}</td>
+                                            <td><span class="tag tag-success">{{$rs->status}}</span></td>
+                                            <td>{{$rs->desc}}</td>
+                                            <td>{{$rs->keywords}}</td>
+                                            <td><a href="{{route('admin_category_edit',$rs->id)}}"><button type="button" class="btn btn-block btn-info">Edit</button></a></td>
+                                            <td><a href="{{route('admin_category_delete',$rs->id)}}"><button type="button" class="btn btn-block btn-danger">Delete</button></a></td>
+                                            <td><a href="{{route('admin_category_show',$rs->id)}}"><button type="button" class="btn btn-block btn-success">Show</button></a></td>
+
                                         </tr>
-                                        <tr>
-                                            <td>219</td>
-                                            <td>Alexander Pierce</td>
-                                            <td>11-7-2014</td>
-                                            <td><span class="tag tag-warning">Pending</span></td>
-                                            <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                                        </tr>
-                                        <tr>
-                                            <td>657</td>
-                                            <td>Bob Doe</td>
-                                            <td>11-7-2014</td>
-                                            <td><span class="tag tag-primary">Approved</span></td>
-                                            <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                                        </tr>
-                                        <tr>
-                                            <td>175</td>
-                                            <td>Mike Doe</td>
-                                            <td>11-7-2014</td>
-                                            <td><span class="tag tag-danger">Denied</span></td>
-                                            <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                                        </tr>
+                                        @endforeach
                                         </tbody>
                                     </table>
                                 </div>

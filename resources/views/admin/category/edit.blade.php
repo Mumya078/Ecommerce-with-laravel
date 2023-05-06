@@ -7,12 +7,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Add Category</h1>
+                        <h1 class="m-0">Edit {{$data->title}}</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{route('admin_category')}}">Admin</a></li>
-                            <li class="breadcrumb-item active">Add Category</li>
+                            <li class="breadcrumb-item active">Edit Category</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -30,24 +30,24 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form role="form" action="{{route('admin_category_store')}}" method="post">
+                        <form role="form" action="{{route('admin_category_update',$data->id)}}" method="post">
                             @csrf
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Category Name</label>
-                                    <input type="text" class="form-control" id="title" placeholder="Enter Title" name="title">
+                                    <input type="text" value="{{$data->title}}" class="form-control" id="title" name="title">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Description</label>
-                                    <textarea type="input" class="form-control" id="desc" name="desc"></textarea>
+                                    <textarea type="input" value="{{$data->desc}}" class="form-control" id="desc" name="desc"></textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="keywords">Keywords</label>
-                                    <input type="text" class="form-control" id="keywords" placeholder="Enter Keywords" name="keywords">
+                                    <input type="text" class="form-control" id="keywords" value="{{$data->keywords}}" name="keywords">
                                 </div>
                                     <div class="form-group">
                                         <label>Status</label>
-                                        <select class="form-control" name="status" id="status">
+                                        <select class="form-control" name="status" id="status" value="{{$data->status}}">
                                             <option>True</option>
                                             <option>False</option>
                                         </select>
