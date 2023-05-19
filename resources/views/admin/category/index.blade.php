@@ -27,12 +27,9 @@
                     <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h3 class="card-title">Responsive Hover Table</h3>
-
                                     <div class="card-tools">
                                         <div class="input-group input-group-sm" style="width: 150px;">
                                             <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-
                                             <div class="input-group-append">
                                                 <button type="submit" class="btn btn-default">
                                                     <i class="fas fa-search"></i>
@@ -47,9 +44,10 @@
                                         <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Categories</th>
-                                            <th>Date</th>
+                                            <th>Title</th>
+                                            <th>Parent Category</th>
                                             <th>Image</th>
+                                            <th>Status</th>
                                             <th>Description</th>
                                             <th>Keywords</th>
                                             <th style="text-align: center">Edit</th>
@@ -63,7 +61,12 @@
                                         <tr>
                                             <td>{{$rs->id}}</td>
                                             <td>{{$rs->title}}</td>
-                                            <td>{{$rs->timestamps}}</td>
+                                            <td>{{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs,$rs->title)}}</td>
+                                            <td>
+                                                @if($rs->image)
+                                                    <img style="height: 50px" src="{{Storage::url($rs->image)}}">
+                                                @endif
+                                            </td>
                                             <td><span class="tag tag-success">{{$rs->status}}</span></td>
                                             <td>{{$rs->desc}}</td>
                                             <td>{{$rs->keywords}}</td>

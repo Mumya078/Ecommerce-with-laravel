@@ -11,8 +11,8 @@
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="{{route('admin_category')}}">Admin</a></li>
-                            <li class="breadcrumb-item active">Edit Category</li>
+                            <li class="breadcrumb-item"><a href="{{route('admin_product')}}">Admin</a></li>
+                            <li class="breadcrumb-item active">Show Product</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -26,21 +26,24 @@
                 <div class="row">
                     <div class="card card-primary" style="margin-left: 8px;margin-top: 8px">
                         <div class="card-header">
-                            <h3 class="card-title">Show Category</h3>
+                            <h3 class="card-title">Show Product</h3>
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <!-- /.card-header -->
                         <div class="card-body table-responsive p-0">
                             <table class="table table-hover text-nowrap">
                                 <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Parent Category</th>
                                     <th>Title</th>
+                                    <th>Category</th>
+                                    <th>Description</th>
+                                    <th>Detail</th>
+                                    <th>Price</th>
+                                    <th>Stock</th>
+                                    <th>Shipping Cost</th>
                                     <th>Image</th>
                                     <th>Status</th>
-                                    <th>Description</th>
                                     <th>Keywords</th>
                                     <th>Updated Date</th>
                                     <th>Created Date</th>
@@ -51,20 +54,24 @@
                                 <tbody>
                                     <tr>
                                         <td>{{$data->id}}</td>
-                                        <td>{{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($data,$data->title)}}</td>
                                         <td>{{$data->title}}</td>
+                                        <td>{{$data->category->title}}</td>
+                                        <td>{{$data->desc}}</td>
+                                        <td>{{$data->detail}}</td>
+                                        <td style="text-align: center">{{$data->price}}</td>
+                                        <td style="text-align: center">{{$data->stock}}</td>
+                                        <td style="text-align: center">{{$data->shipping_cost}}</td>
                                         <td>
                                             @if($data->image)
-                                                <img style="height: 50px" src="{{Storage::url($data->image)}}">
+                                                <img src="{{Storage::url($data->image)}}" style="height: 40px"
                                             @endif
                                         </td>
                                         <td><span class="tag tag-success">{{$data->status}}</span></td>
-                                        <td>{{$data->desc}}</td>
                                         <td>{{$data->keywords}}</td>
                                         <td>{{$data->updated_at}}</td>
                                         <td>{{$data->created_at}}</td>
-                                        <td><a href="{{route('admin_category_edit',$data->id)}}"><button type="button" class="btn btn-block btn-info">Edit</button></a></td>
-                                        <td><a href="{{route('admin_category_delete',$data->id)}}"><button type="button" class="btn btn-block btn-danger">Delete</button></a></td>
+                                        <td><a href="{{route('admin_product_edit',$data->id)}}"><button type="button" class="btn btn-block btn-info">Edit</button></a></td>
+                                        <td><a href="{{route('admin_product_delete',$data->id)}}"><button type="button" class="btn btn-block btn-danger">Delete</button></a></td>
                                     </tr>
                                 </tbody>
                             </table>

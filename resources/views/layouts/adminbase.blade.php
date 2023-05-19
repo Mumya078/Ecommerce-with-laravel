@@ -215,7 +215,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('admin_category')}}" class="nav-link">
+                        <a href="{{route('admin_product')}}" class="nav-link">
                             <ion-icon  name="cube-sharp" class="nav-icon fas fa-8x"></ion-icon>
                             <p>
                                 Product

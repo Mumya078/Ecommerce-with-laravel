@@ -1,18 +1,32 @@
-@extends('layouts.adminbase')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AdminLTE 3 | Dashboard 2</title>
 
-@section('content')
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="/dist/css/adminlte.min.css">
+</head>
+<body class="dark-mode">
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Add Category</h1>
+                        <h1 class="m-0">Add Image</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{route('admin_category')}}">Admin</a></li>
-                            <li class="breadcrumb-item active">Add Category</li>
+                            <li class="breadcrumb-item active">Add Image</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -25,34 +39,15 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="card card-primary" style="margin-left: 8px;margin-top: 8px">
-                        <div class="card-header">
-                            <h3 class="card-title">Quick Example</h3>
-                        </div>
+
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form role="form" action="{{route('admin_category_store')}}" method="post" enctype="multipart/form-data">
+                        <form role="form" action="{{route('admin_image_store',['pid'=>$data->id])}}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Category Name</label>
+                                    <label for="exampleInputEmail1">Image Title</label>
                                     <input type="text" class="form-control" id="title" placeholder="Enter Title" name="title">
-                                </div>
-                                <div class="form-group">
-                                    <label>Parent Category</label>
-                                    <select class="form-control" name="parent_id" id="parent_id">
-                                        @foreach($data as $rs)
-                                        <option value="{{$rs->id}}">{{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs,$rs->title)}}</option>
-                                        @endforeach
-                                        <option value="0" style="color: #ff2b39">New Category</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Description</label>
-                                    <textarea type="input" class="form-control" id="desc" name="desc"></textarea>
-                                </div>
-                                <div class="form-group">
-                                    <label for="keywords">Keywords</label>
-                                    <input type="text" class="form-control" id="keywords" placeholder="Enter Keywords" name="keywords">
                                 </div>
                                     <div class="form-group">
                                         <label>Status</label>
@@ -82,4 +77,13 @@
         </div>
         <!-- /.content -->
     </div>
-@endsection
+</body>
+<script src="/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="/dist/js/adminlte.min.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</html>
+
